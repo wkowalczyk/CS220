@@ -1,0 +1,32 @@
+08048dee <phase_5>:
+ 8048dee:	55                   	push   %ebp
+ 8048def:	89 e5                	mov    %esp,%ebp
+ 8048df1:	57                   	push   %edi
+ 8048df2:	56                   	push   %esi
+ 8048df3:	53                   	push   %ebx
+ 8048df4:	83 ec 1c             	sub    $0x1c,%esp
+ 8048df7:	8b 5d 08             	mov    0x8(%ebp),%ebx
+ 8048dfa:	89 1c 24             	mov    %ebx,(%esp)
+ 8048dfd:	e8 8e 01 00 00       	call   8048f90 <string_length>
+ 8048e02:	83 f8 06             	cmp    $0x6,%eax
+ 8048e05:	74 05                	je     8048e0c <phase_5+0x1e>
+ 8048e07:	e8 9d 03 00 00       	call   80491a9 <explode_bomb>
+ 8048e0c:	ba 00 00 00 00       	mov    $0x0,%edx
+ 8048e11:	b8 00 00 00 00       	mov    $0x0,%eax
+ 8048e16:	b9 c0 a1 04 08       	mov    $0x804a1c0,%ecx
+ 8048e1b:	0f be 34 03          	movsbl (%ebx,%eax,1),%esi
+ 8048e1f:	83 e6 0f             	and    $0xf,%esi
+ 8048e22:	03 14 b1             	add    (%ecx,%esi,4),%edx
+ 8048e25:	83 c0 01             	add    $0x1,%eax
+ 8048e28:	83 f8 06             	cmp    $0x6,%eax
+ 8048e2b:	75 ee                	jne    8048e1b <phase_5+0x2d>
+ 8048e2d:	83 fa 40             	cmp    $0x40,%edx
+ 8048e30:	74 05                	je     8048e37 <phase_5+0x49>
+ 8048e32:	e8 72 03 00 00       	call   80491a9 <explode_bomb>
+ 8048e37:	83 c4 1c             	add    $0x1c,%esp
+ 8048e3a:	5b                   	pop    %ebx
+ 8048e3b:	5e                   	pop    %esi
+ 8048e3c:	5f                   	pop    %edi
+ 8048e3d:	5d                   	pop    %ebp
+ 8048e3e:	c3                   	ret    
+
